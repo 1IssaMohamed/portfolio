@@ -93,41 +93,23 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            aria-label={`Switch to ${themeName === 'dark' ? 'light' : 'dark'} mode`}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '6px',
-              color: theme.textSecondary,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            {themeName === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
-          <a
-            href="mailto:m.ad.issa32@gmail.com"
-            className="nav-cta"
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '0.85rem',
-              color: theme.accent,
-              border: `1px solid ${theme.accent}`,
-              padding: '8px 14px',
-              borderRadius: '4px',
-              textDecoration: 'none',
-            }}
-          >
-            Get in Touch
-          </a>
-        </div>
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          aria-label={`Switch to ${themeName === 'dark' ? 'light' : 'dark'} mode`}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '6px',
+            color: theme.textSecondary,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {themeName === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
       </div>
     </nav>
   )
