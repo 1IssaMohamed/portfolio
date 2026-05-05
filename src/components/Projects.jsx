@@ -5,6 +5,50 @@ import { useTheme } from '../context/ThemeContext'
 
 const projects = [
   {
+    title: 'Data Structurizer',
+    shortDesc: 'Visualizer for Data Structures & Algorithms',
+    description: 'A "DVR for algorithms" that lets you run real Python code and step through execution line-by-line to see how variables and pointers change. Built to solve the frustration of manually tracing pointers on paper while grinding LeetCode.',
+    tech: ['React', 'Python', 'FastAPI', 'Docker', 'DigitalOcean'],
+    github: 'https://github.com/1IssaMohamed/data-structurizer',
+    live: 'https://algovisualizer.dev',
+    icon: Code2,
+    featured: true,
+    status: 'Completed',
+    insights: {
+      problem: 'Visualizing pointer movements and data structure mutations in your head during algorithm practice (like NeetCode 75) is difficult and prone to errors.',
+      solution: 'Built a containerized application with a React frontend and a Python FastAPI backend that executes user code in a controlled worker pool, capturing state at every step for playback.',
+      impact: 'Provides an interactive, step-by-step visual debugger that significantly speeds up the learning curve for complex algorithms.',
+      learned: 'Docker containerization, DigitalOcean droplet deployment with SSL via Certbot, building a robust FastAPI backend with process pools, and state management in React.',
+    },
+    highlights: [
+      { icon: Zap, label: 'Execution', value: 'Step-by-step' },
+      { icon: Target, label: 'Deployment', value: 'Dockerized' },
+      { icon: Shield, label: 'Limits', value: 'Safe Execution' },
+    ],
+  },
+  {
+    title: 'IEEE YorkU Website',
+    shortDesc: 'Official student branch platform',
+    description: 'A modern, responsive full-stack website for the IEEE student branch at York University. Built to showcase events, manage team profiles, and provide a professional digital presence for the club with robust backend security.',
+    tech: ['React', 'Express', 'Tailwind CSS', 'Node.js', 'Vite'],
+    github: 'https://github.com/1IssaMohamed/IEEE-YorkU',
+    live: null,
+    icon: Code2,
+    featured: false,
+    status: 'Completed',
+    insights: {
+      problem: 'The student branch needed a modern, maintainable platform to announce events, share technical resources, and present the leadership team to the engineering student body.',
+      solution: 'Developed a custom full-stack web application with a React/Tailwind frontend for a sleek UI and an Express backend. Implemented robust security measures like Helmet.js and rate limiting.',
+      impact: 'Established a professional digital hub for all club activities, improving student engagement and serving as a reliable platform for future club initiatives.',
+      learned: 'Full-stack application architecture, React component optimization (useMemo, useCallback), Express API security, and deployment pipelines.',
+    },
+    highlights: [
+      { icon: Target, label: 'Design', value: 'Responsive' },
+      { icon: Shield, label: 'Security', value: 'Hardened' },
+      { icon: Zap, label: 'Stack', value: 'MERN' },
+    ],
+  },
+  {
     title: 'MalShield',
     shortDesc: 'AI-powered threat detection tool',
     description:
@@ -497,25 +541,6 @@ const ProjectCard = ({ project, index, theme, onClick }) => {
           </div>
         )}
 
-        {/* Featured badge */}
-        {project.featured && (
-          <span
-            style={{
-              position: 'absolute',
-              top: '15px',
-              left: '15px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '0.7rem',
-              color: theme.accent,
-              backgroundColor: `${theme.accent}15`,
-              padding: '4px 10px',
-              borderRadius: '4px',
-              border: `1px solid ${theme.accent}30`,
-            }}
-          >
-            Featured
-          </span>
-        )}
       </div>
 
       {/* Content */}
@@ -582,6 +607,39 @@ const ProjectCard = ({ project, index, theme, onClick }) => {
               }}
             />
           </span>
+
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 12px',
+                backgroundColor: `${theme.accent}15`,
+                color: theme.accent,
+                borderRadius: '6px',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '0.75rem',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = theme.accent
+                e.currentTarget.style.color = theme.bgPrimary
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = `${theme.accent}15`
+                e.currentTarget.style.color = theme.accent
+              }}
+            >
+              <ExternalLink size={14} />
+              Live
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
