@@ -14,14 +14,14 @@ export const themes = {
   },
   light: {
     name: 'light',
-    bgPrimary: '#fafafa',
-    bgSecondary: '#ffffff',
-    bgTertiary: '#f0f0f0',
-    textPrimary: '#1a1a1a',
-    textSecondary: '#4a4a4a',
-    textMuted: '#888888',
-    accent: '#b8864a',
-    accentTint: 'rgba(184, 134, 74, 0.1)',
-    border: '#e0e0e0',
+    bgPrimary: '#FFEEE2', // Warm peach main background
+    bgSecondary: '#ffffff', // Clean white for cards
+    bgTertiary: '#EAE3DD', // Soft greyish-brown (greige) for tags/image backgrounds
+    textPrimary: '#2C241E', // Very dark brown for strong readability
+    textSecondary: '#594A3E', // Medium-dark brown for body text
+    textMuted: '#9F7E69', // Custom brown for muted text
+    accent: '#9F7E69', // Custom brown for primary accent
+    accentTint: 'rgba(159, 126, 105, 0.12)', // Subtle greyish-brown tint for hover states
+    border: '#D2BBA0', // Custom tan for soft borders
   },
 }
