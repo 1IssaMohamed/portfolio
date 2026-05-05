@@ -48,7 +48,7 @@ const Hero = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: '0 50px',
+        padding: '0 clamp(20px, 5vw, 50px)',
         position: 'relative',
         backgroundColor: theme.bgPrimary,
         transition: 'background-color 0.3s ease',

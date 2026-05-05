@@ -14,7 +14,7 @@ const Skills = () => {
 
   return (
     <section id="skills" style={{ padding: '80px 0', backgroundColor: theme.bgPrimary, transition: 'background-color 0.3s ease' }}>
-      <div ref={ref} style={{ maxWidth: '900px', margin: '0 auto', padding: '0 50px' }}>
+      <div ref={ref} style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 50px)' }}>
         <h2
           style={{
             fontSize: 'clamp(24px, 4vw, 32px)',

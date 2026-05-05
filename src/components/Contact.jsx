@@ -8,7 +8,7 @@ const Contact = () => {
 
   return (
     <section id="contact" style={{ padding: '80px 0', backgroundColor: theme.bgSecondary, transition: 'background-color 0.3s ease' }}>
-      <div ref={ref} style={{ maxWidth: '600px', margin: '0 auto', padding: '0 50px', textAlign: 'center' }}>
+      <div ref={ref} style={{ maxWidth: '600px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 50px)', textAlign: 'center' }}>
         <h2
           style={{
             fontSize: 'clamp(28px, 5vw, 40px)',
@@ -60,7 +60,7 @@ const Contact = () => {
             textDecoration: 'none',
           }}
         >
-          m.ad.issa32@gmail.com
+          Get In Touch
         </a>
 
         {/* Social Links */}

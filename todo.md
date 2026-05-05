@@ -1,0 +1,2 @@
+- [ ] Replace placeholder "Your photo" with actual profile image in Hero section.
+- [ ] Add actual screenshots or mockups to project cards instead of generic icons.

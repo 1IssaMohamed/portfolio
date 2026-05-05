@@ -480,14 +480,22 @@ const ProjectCard = ({ project, index, theme, onClick }) => {
           position: 'relative',
         }}
       >
-        <div
-          style={{
-            color: hovered ? theme.accent : theme.textMuted,
-            transition: 'color 0.2s ease',
-          }}
-        >
-          <Icon size={48} strokeWidth={1.5} />
-        </div>
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={`${project.title} screenshot`} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          />
+        ) : (
+          <div
+            style={{
+              color: hovered ? theme.accent : theme.textMuted,
+              transition: 'color 0.2s ease',
+            }}
+          >
+            <Icon size={48} strokeWidth={1.5} />
+          </div>
+        )}
 
         {/* Featured badge */}
         {project.featured && (
@@ -525,9 +533,9 @@ const ProjectCard = ({ project, index, theme, onClick }) => {
         </h3>
         <p style={{ fontSize: '0.9rem', color: theme.textMuted, marginBottom: '20px', lineHeight: 1.5 }}>{project.shortDesc}</p>
 
-        {/* Tech Tags (limited) */}
+        {/* Tech Tags */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
-          {project.tech.slice(0, 3).map((tech) => (
+          {project.tech.map((tech) => (
             <span
               key={tech}
               style={{
@@ -542,20 +550,6 @@ const ProjectCard = ({ project, index, theme, onClick }) => {
               {tech}
             </span>
           ))}
-          {project.tech.length > 3 && (
-            <span
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: '0.7rem',
-                color: theme.textMuted,
-                backgroundColor: theme.bgTertiary,
-                padding: '4px 10px',
-                borderRadius: '4px',
-              }}
-            >
-              +{project.tech.length - 3}
-            </span>
-          )}
         </div>
 
         {/* View Details CTA */}
@@ -579,7 +573,7 @@ const ProjectCard = ({ project, index, theme, onClick }) => {
               transition: 'color 0.3s ease',
             }}
           >
-            View Deatils
+            View Details
             <ChevronRight
               size={16}
               style={{
@@ -613,7 +607,7 @@ const Projects = () => {
   return (
     <>
       <section id="projects" style={{ padding: '80px 0', backgroundColor: theme.bgSecondary, transition: 'background-color 0.3s ease' }}>
-        <div ref={ref} style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 50px' }}>
+        <div ref={ref} style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 50px)' }}>
           <h2
             style={{
               fontSize: 'clamp(24px, 4vw, 32px)',

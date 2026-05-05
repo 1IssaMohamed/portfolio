@@ -83,10 +83,10 @@ const TimelineItem = ({ experience, index, theme }) => {
       <div
         style={{
           position: 'absolute',
-          left: '-4px',
+          left: '-5px',
           top: '6px',
-          width: '10px',
-          height: '10px',
+          width: '12px',
+          height: '12px',
           borderRadius: '50%',
           backgroundColor: theme.accent,
         }}
@@ -130,7 +130,7 @@ const Experience = () => {
 
   return (
     <section id="experience" style={{ padding: '100px 0', backgroundColor: theme.bgSecondary, transition: 'background-color 0.3s ease' }}>
-      <div ref={ref} style={{ maxWidth: '900px', margin: '0 auto', padding: '0 50px' }}>
+      <div ref={ref} style={{ maxWidth: '900px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 50px)' }}>
         <h2
           style={{
             fontSize: 'clamp(24px, 4vw, 32px)',

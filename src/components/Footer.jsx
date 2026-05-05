@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer style={{ padding: '30px 0', backgroundColor: theme.bgSecondary, transition: 'background-color 0.3s ease' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 50px', textAlign: 'center' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 50px)', textAlign: 'center' }}>
         <p
           style={{
             fontFamily: "'JetBrains Mono', monospace",

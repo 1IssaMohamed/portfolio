@@ -64,7 +64,7 @@ const Navbar = () => {
         style={{
           maxWidth: '1100px',
           margin: '0 auto',
-          padding: '0 50px',
+          padding: '0 clamp(20px, 5vw, 50px)',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
@@ -82,10 +82,10 @@ const Navbar = () => {
             textDecoration: 'none',
           }}
         >
-          MI
+          {/* Logo removed */}
         </a>
 
-        <ul className="nav-links" style={{ display: 'flex', gap: '30px', listStyle: 'none' }}>
+        <ul className="nav-links" style={{ display: 'flex', gap: 'clamp(10px, 2vw, 30px)', listStyle: 'none', overflowX: 'auto', whiteSpace: 'nowrap', paddingBottom: '4px' }}>
           {navLinks.map((link) => (
             <NavLink key={link.name} {...link} />
           ))}
