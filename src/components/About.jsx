@@ -1,5 +1,4 @@
 import { useRef } from 'react'
-import { useInView } from 'framer-motion'
 import { GraduationCap } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 

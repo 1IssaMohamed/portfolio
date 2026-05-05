@@ -5,14 +5,12 @@ import { useTheme } from '../context/ThemeContext'
 const Navbar = () => {
   const { theme, themeName, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
-  const [hidden, setHidden] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       setScrolled(currentScrollY > 50)
-      setHidden(currentScrollY > lastScrollY && currentScrollY > 100)
       setLastScrollY(currentScrollY)
     }
 
@@ -28,7 +26,7 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' },
   ]
 
-  const NavLink = ({ name, href, index }) => {
+  const NavLink = ({ name, href }) => {
     return (
       <li>
         <a
@@ -88,8 +86,8 @@ const Navbar = () => {
         </a>
 
         <ul className="nav-links" style={{ display: 'flex', gap: '30px', listStyle: 'none' }}>
-          {navLinks.map((link, index) => (
-            <NavLink key={link.name} {...link} index={index} />
+          {navLinks.map((link) => (
+            <NavLink key={link.name} {...link} />
           ))}
         </ul>
 

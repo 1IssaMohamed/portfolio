@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion as Motion, useInView } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 
 const experiences = [
@@ -60,7 +60,7 @@ const TimelineItem = ({ experience, index, theme }) => {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <motion.div
+    <Motion.div
       ref={ref}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
@@ -120,7 +120,7 @@ const TimelineItem = ({ experience, index, theme }) => {
           ))}
         </ul>
       </div>
-    </motion.div>
+    </Motion.div>
   )
 }
 

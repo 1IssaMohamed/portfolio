@@ -4,7 +4,6 @@ import { useTheme } from '../context/ThemeContext'
 const CursorGlow = () => {
   const { themeName } = useTheme()
   const glowRef = useRef(null)
-  const [position, setPosition] = useState({ x: -100, y: -100 })
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
